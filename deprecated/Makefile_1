@@ -1,0 +1,121 @@
+# Compiler
+CC = g++
+CL = clang --analyze
+SRCDIR = src
+BUILDDIR = build
+TARGET = bin/run_segment_analysis
+TARGETp = bin/run_segment_analysis_proto
+
+# SRC
+SRCEXT = cpp
+SOURCES = $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
+OBJECTS = $(patsubst $(SRCDIR)/%, $(BUILDDIR)/%, $(SOURCES:.$(SRCEXT)=.o))
+
+# Files/Objects
+# OBJECTS = .o
+# CFILES = .c
+
+# Compiler Flags: Use $(CF) for generic/old architectures
+CFLAGS   = -g
+# CFLAGS   = -g -O2 -std=c++11
+# or -std=gnu++11
+CF       = -Wall -g -O2
+CFLAGS_0   = -ansi -std=gnu99
+CFLAGS_1 = -ansi -pedantic -std=gnu99 -Wall -W
+CFLAGS_2 = -Wconversion -Wshadow -Wcast-qual -Wwrite-strings -g -O2
+
+# lib
+LIB := -pthread
+# LIB := -pthread -larmadillo
+# LIB := -pthread -lmongoclient -L lib -lboost_thread-mt -lboost_filesystem-mt -lboost_system-mt
+LDFLAGS=
+
+# include
+INC = -I include
+
+# Valgrind
+VAL    = valgrind --track-origins=yes -v
+VALFULL= valgrind --track-origins=yes --leak-check=full -v
+VALMEM = valgrind --track-origins=yes --tool=memcheck --leak-check=full --show-leak-kinds=all --show-reachable=yes --num-callers=20 --track-fds=yes -v
+VALMASS= valgrind --tool=massif prog
+
+# Macros
+PROTO = -DPROTO
+
+# all: $(TARGET)
+
+$(TARGET): $(OBJECTS)
+	@echo " Linking..."
+	@echo " $(CC) $^ -o $(TARGET) $(LIB)"; $(CC) $^ -o $(TARGET) $(LIB)
+
+$(BUILDDIR)/%.o: $(SRCDIR)/%.$(SRCEXT)
+	@mkdir -p $(BUILDDIR)
+	@echo " $(CC) $(CFLAGS) $(INC) -c -o $@ $<"; $(CC) $(CFLAGS) $(INC) -c -o $@ $<
+
+clean:
+	@echo " Cleaning...";
+	@echo " $(RM) -r $(BUILDDIR) $(TARGET)"; $(RM) -r $(BUILDDIR) $(TARGET)
+
+release: $(SOURCES) $(OBJECTS)
+	$(CC) $^ -o $(OBJECTS) $(LIB)
+# $(CC) $(CFLAGS) $(INC) -c -o $@ $< run_segment_analysis_proto
+
+
+# all: $(SOURCES) $(TARGET)
+# $(EXECUTABLE): $(OBJECTS)
+# $(CC) $(LDFLAGS) $(OBJECTS) -o $@
+
+# .cpp.o:
+#     $(CC) $(CFLAGS) $< -o $@
+
+# # Tests
+# tester:
+# 	$(CC) $(CFLAGS) test/tester.cpp $(INC) $(LIB) -o bin/tester
+
+# # Spikes
+# ticket:
+# 	$(CC) $(CFLAGS) $(INC) $(LIB) -o bin/ticket
+
+.PHONY: clean
+
+
+# ---------------------------------------------------------------------
+# Description:
+# ---------------------------------------------------------------------
+# type:
+# desc:
+# actual:
+# bin/run_segment_analysis_(type) <args>
+# --
+# type: proto
+# desc:   bin/run_segment_analysis_proto <proto.pdb> <monomer # (int)> <kinesins # (int)>
+# actual: bin/run_segment_analysis_proto proto.pdb 14 2
+# --
+
+
+# Examples & Testing
+test1:
+	bin/run_segment_analysis test/mt.pdb 3 0
+test2:
+	$(VALMEM) bin/run_segment_analysis test/mt.pdb 3 0
+# $(VALFULL) bin/run_segment_analysis test/mt.pdb 3 0
+testbig:
+	bin/run_segment_analysis test/mtbig.pdb 209 1
+testsuper:
+	bin/run_segment_analysis test/mtsuper.pdb 1500 0
+# 1462.
+testproto:
+	bin/run_segment_analysis_proto proto.pdb 14 2
+
+# -----------------------------
+# make commands
+# basic:
+# $(CC) $(CF) $(MACRO1) $(CFILES) -lm -o run_segment_analysis
+# main: $(OBJECTS)
+# $(CC) $(CFLAGS) $(MACRO1) $(OBJECTS) -lm -o run_segment_analysis
+# %.o : %.c
+# $(CC) $(CFLAGS) -c $<
+# clean:
+# rm -r *.o run_segment_analysis*
+# run:
+# ./run_segment_analysis
