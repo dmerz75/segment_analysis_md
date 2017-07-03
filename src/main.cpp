@@ -2797,6 +2797,40 @@ int main(int argc, char *argv[]) {
     // fprintf_contact_map_gsop(chain_ref[1].contacts);
     // fprintf_contact_map_gsop(chain_ref[0].intercontacts);
 #endif // SBDNOPEP
+#ifdef SBDNOPEPchainA
+    // SMALL then BIG worked.  (ca:7 with ca:216)
+    // Contact map[MOLECULE_INITIAL_SIZE][MAX_CONTACTS];
+    // build_contact_map_inter(chain_ref,1,0,map); // important: 1,0 small/big
+    // memcpy(chain_ref[0].intercontacts, map, sizeof(chain_ref[0].intercontacts));
+    // memcpy(chain_ref[1].intercontacts, map, sizeof(chain_ref[1].intercontacts));
+    // ---------------------------------------------------------------------
+    // print_contact_map()
+    // print_contact_map(chain_ref[0].contacts); // 1176
+    // print_contact_map(chain_ref[1].contacts); // happens to be 0.
+    // print_contact_map(chain_ref[0].intercontacts); // 80
+    // print_contact_map(chain_ref[1].intercontacts); // same.
+
+    // assign eh.
+    // assign_contact_eh(Contact (*map)[MAX_CONTACTS],float eh,int low_resid,\
+    //                        int high_resid,int low_cresid,int high_cresid);
+    // ---------------------------------------------------------------------
+    assign_contact_eh(chain_ref[0].contacts,1.35,0,121,0,121); // 224 total.
+    assign_contact_eh(chain_ref[0].contacts,1.80,122,223,122,223);
+    assign_contact_eh(chain_ref[0].contacts,1.55885); // gets the rest of the 0.0;
+    // print_contact_map(chain_ref[0].contacts);
+    // debug("contact mapping -------------");
+
+    // print_contact_map(chain_ref[0].contacts);
+    // debug("contact mapping -------------");
+    // assign_contact_eh(chain_ref[0].intercontacts,1.55885);
+
+
+    // print gsop topology, native section.
+    // ---------------------------------------------------------------------
+    fprintf_contact_map_gsop(chain_ref[0].contacts);
+    // fprintf_contact_map_gsop(chain_ref[1].contacts);
+    // fprintf_contact_map_gsop(chain_ref[0].intercontacts);
+#endif // SBDNOPEP
 
 
 // #ifdef MTTOP

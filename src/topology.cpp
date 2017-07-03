@@ -448,7 +448,7 @@ int topo_contacts_persisting_by_residue(Chain *chain,int chain_num,Contact (*map
     for(int i=0; i<chain[chain_num].num_atoms_ca; i++){
 
         // FPRINT RES HERE
-        printf("%d\n",i);
+        // printf("%d\n",i);
         fprintf(fp,"%3d ",i);
 
         count = 0;
@@ -472,7 +472,7 @@ int topo_contacts_persisting_by_residue(Chain *chain,int chain_num,Contact (*map
                     total ++;
 
                     // FPRINT RES CONTACT HERE
-                    printf("\t%d\n",map[i][k].cresid);
+                    // printf("\t%d\n",map[i][k].cresid);
                     fprintf(fp,"%3d ",map[i][k].cresid);
 
                 }

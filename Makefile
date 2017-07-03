@@ -361,6 +361,8 @@ topology_pf:
 topology-nopep:
 	$(CXX) $(CPPFILES) $(CF) $(INC) $(LIB) $(TOPO) -DSBDNOPEP -o test/$(EXEC)_top_nopep
 	cd test && ./$(EXEC)_top_nopep pdb2khosbd_CA.ent 1 0
+topology-sbdchainA:
+	$(CXX) $(CPPFILES) $(CF) $(INC) $(LIB) $(TOPO) -DSBDNOPEPchainA -o test/$(EXEC)_top_sbdchainA
 topology_mt_release:
 	$(CXX) $(CPPFILES) $(CF) $(INC) $(LIB) $(MTTOP) -DNDEBUG -o bin/$(EXEC)_top_mt
 topology_mt:
@@ -387,7 +389,7 @@ all: \
 	contactmapM_release \
 	contactmapP_release \
 	contactmapN_release \
-	dcd_release
+	dcd_release \
 	chi_release
 
 
