@@ -1,4 +1,4 @@
-# Segment Analysis for Coarse-grained MD in the SOP model
+# Segment Analysis for Coarse-grained Molecular Dynamics in the SOP model
 The self-organized polymer (SOP) model is a coarse-grained molecular dynamics software that
 employs Brownian motion for the dynamics describing macromolecular structures. It uses a finite-extensible
 non-linear elastic potential for the covalent bonds, a Lennard-Jones potential for non-covalent native contacts,
@@ -56,6 +56,7 @@ Assuming you copied the executables to /usr/local/bin (if not, then use an expor
 to include the segment_analysis-master/bin directory), you are now ready to run analysis your SOP trajectories.
 
     run_segment_dcd_contactmap_mt mt.ref.pdb dcd/mt_D1_pull.dcd <# of chains> <# of chains to ignore> <start-frame> <stop-frame> <step>
+    run_segment_dcd_contactmap_mt mt.ref.pdb dcd/mt_D1_pull.dcd 157 1 0 25000 10
 
 To run, it's the executable, followed by the pdb and dcd. Then input the # of chains/segments in the molecule, the # of chains and segments in the molecule
 to ignore, and finally a start, stop, and step integers for the frames to be evaluated. Input all of this on 1 line.
