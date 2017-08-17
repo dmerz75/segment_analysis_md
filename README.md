@@ -9,13 +9,16 @@ Therefore, Segment Analysis was written to facilitate the analysis of these stru
 
 ## Quickstart:
 Create a bin directory if it does not yet exist. Then run:
+
     mkdir -p bin
     make all
+
 After creating all of the executables, consider copying them to /usr/local/bin/.
+
     sudo cp bin/run_segment* /usr/local/bin
 
 Compiling all of the softwares available is a quick way to get started. See the [Makefile](./Makefile).
-The following softwares will be compiled (target:executable). $(EXEC) is usually run_segment
+The following softwares will be compiled (target:executable). $(EXEC) is usually run_segment.
 * dimermap_release: bin/$(EXEC)_dcd_dimermap_mt
 * indices_release:
 * topology_release: bin/$(EXEC)_top
@@ -32,20 +35,3 @@ The following softwares will be compiled (target:executable). $(EXEC) is usually
 * contactmapN_release: bin/$(EXEC)_dcd_contactmap_1
 * dcd_release:  bin/$(EXEC)_dcd
 * chi_release: bin/$(EXEC)_dcd_chi_1
-
-
-
-
-
-## bin: executables
-## build: all object files, 'make clean' to remove
-## doc: notes, etc
-## include: header files
-## lib: libraries ..
-## src: The application and only the application’s source files.
-## test: testing
-
-# Available Analyses from the Makefile:
-contact_release
-proto_release
-mtcon_release
