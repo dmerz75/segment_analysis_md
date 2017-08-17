@@ -9,7 +9,7 @@ Therefore, Segment Analysis was written to facilitate the analysis of these stru
 
 ## Quickstart:
     make all
-Compiling all of the softwares available is a quick way to get started. See the [Makefile](blob/master/Makefile).
+Compiling all of the softwares available is a quick way to get started. See the [Makefile](./Makefile).
 The following softwares will be compiled:
 * dimermap_release
 * indices_release
