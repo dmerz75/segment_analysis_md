@@ -76,9 +76,10 @@ The output should be reasonably easy to plot if you are familiar with array mani
 ### Tension:
 Figure of the tension in the Hsp70 substrate binding domain:
 
-<img src="fig/gsop_tension_nopep_16_10_map-0.png" width="600px">
+<img src="fig/gsop_tension_nopep_16_10_map-0.png" width="350px" height="350px">
+<img src="fig/gsop_tension_nopep_16_10_subplot_250_400_500-3.png" width="350px" height="350px">
 
-![](fig/gsop_tension_nopep_16_10_map-0.png | width=100)
+
 ![](fig/gsop_tension_nopep_16_10_subplot_250_400_500-3.png)
 ![](fig/gsop_tension_nopep_16_10_lines_150_50-0.png)
 ![](fig/gsop_tension_nopep_16_10_lines_200_20-0.png)
