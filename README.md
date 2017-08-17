@@ -17,6 +17,7 @@ After creating all of the executables, consider copying them to /usr/local/bin/.
 
     sudo cp bin/run_segment* /usr/local/bin
 
+### The quickstart targets:
 Compiling all of the softwares available is a quick way to get started. See the [Makefile](./Makefile).
 The following softwares will be compiled (target:executable). $(EXEC) is usually run_segment.
 * dimermap_release:
@@ -48,3 +49,13 @@ The following softwares will be compiled (target:executable). $(EXEC) is usually
     * bin/$(EXEC)_dcd
 * chi_release:
     * bin/$(EXEC)_dcd_chi_1
+
+
+## How to run:
+Assuming you copied the executables to /usr/local/bin (if not, then use an export command to expand your $PATH variable
+to include the segment_analysis-master/bin directory), you are now ready to run analysis your SOP trajectories.
+
+    run_segment_dcd_contactmap_mt mt.ref.pdb dcd/mt_D1_pull.dcd <# of chains> <# of chains to ignore> <start-frame> <stop-frame> <step>
+
+To run, it's the executable, followed by the pdb and dcd. Then input the # of chains/segments in the molecule, the # of chains and segments in the molecule
+to ignore, and finally a start, stop, and step integers for the frames to be evaluated. Input all of this on 1 line.
