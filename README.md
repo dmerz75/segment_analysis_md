@@ -72,11 +72,28 @@ Try again.
 
 ## Plotting examples:
 The output should be reasonably easy to plot if you are familiar with array manipulations using numpy or something equivalent.
+The following examples were used in my research on the Heat shock protein (70 kDa) nucleotide binding domain and substrate
+binding domain. Those two papers, published in the Proceedings of the National Academy of Sciences, are linked to here:
+* [doi: 10.1073/pnas.1619843114](http://www.pnas.org/content/114/23/6040) on NBD (2015).
+* [doi: 10.1073/pnas.1504625112](http://www.pnas.org/content/112/33/10389.abstract) on SBD (2017).
+
+
+### Hsp70: the nucleotide binding domain (NBD) and the substrate binding domain (SBD):
+Figure of the Hsp70:
+<img src="fig/sbd_starting_structures.png" width="600px" height="330px">
+
+The starting structures:
+1. [2KHO](http://www.rcsb.org/pdb/explore.do?structureId=2KHO)
+2. [4B9Q](http://www.rcsb.org/pdb/explore.do?structureId=4B9Q)
+3. [4EZW](http://www.rcsb.org/pdb/explore.do?structureId=4EZW)
+
 
 ### Tension:
 Figure of the tension in the Hsp70 substrate binding domain:
 
-<img src="fig/gsop_tension_nopep_16_10_map-0.png" width="380px" height="320px"> <img src="fig/gsop_tension_nopep_16_10_subplot_250_400_500-3.png" width="380px" height="300px">
+<img src="fig/gsop_tension_nopep_16_10_map-0.png" width="400px" height="330px"> <img src="fig/gsop_tension_nopep_16_10_subplot_250_400_500-3.png" width="400px" height="300px">
+<img src="fig/gsop_tension_nopep_16_10_lines_150_50-0.png" width="400px"> <img src="fig/gsop_tension_nopep_16_10_lines_250_12-0.png" width="400px">
+<img src="fig/gsop_tension_nopep_16_10_lines_400_50-0.png" width="400px"> <img src="fig/gsop_tension_nopep_16_10_lines_900_50-0.png" width="400px">
 
-<img src="fig/gsop_tension_nopep_16_10_lines_150_50-0.png" width="380px"> <img src="fig/gsop_tension_nopep_16_10_lines_250_12-0.png" width="380px">
-<img src="fig/gsop_tension_nopep_16_10_lines_400_50-0.png" width="380px"> <img src="fig/gsop_tension_nopep_16_10_lines_900_50-0.png" width="380px">
+### Contacts:
+Figure of the contact evolution for Hsp70, substrate binding domain:
