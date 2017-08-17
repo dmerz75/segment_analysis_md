@@ -74,8 +74,8 @@ Try again.
 The output should be reasonably easy to plot if you are familiar with array manipulations using numpy or something equivalent.
 The following examples were used in my research on the Heat shock protein (70 kDa) nucleotide binding domain and substrate
 binding domain. Those two papers, published in the Proceedings of the National Academy of Sciences, are linked to here:
-* [doi: 10.1073/pnas.1619843114](http://www.pnas.org/content/114/23/6040) on NBD (2015).
-* [doi: 10.1073/pnas.1504625112](http://www.pnas.org/content/112/33/10389.abstract) on SBD (2017).
+* [doi: 10.1073/pnas.1619843114](http://www.pnas.org/content/112/33/10389.abstract) on NBD (2015).
+* [doi: 10.1073/pnas.1504625112](http://www.pnas.org/content/114/23/6040) on SBD (2017).
 
 
 ### Hsp70: the nucleotide binding domain (NBD) and the substrate binding domain (SBD):
@@ -83,9 +83,9 @@ Figure of the Hsp70:
 <img src="fig/sbd_starting_structures.png" width="600px" height="330px">
 
 The starting structures:
-1. [2KHO](http://www.rcsb.org/pdb/explore.do?structureId=2KHO)
-2. [4B9Q](http://www.rcsb.org/pdb/explore.do?structureId=4B9Q)
-3. [4EZW](http://www.rcsb.org/pdb/explore.do?structureId=4EZW)
+1. [2KHO:](http://www.rcsb.org/pdb/explore.do?structureId=2KHO) NMR-RDC / XRAY structure of E. coli HSP70 (DNAK) chaperone (1-605) complexed with ADP and substrate.
+2. [4B9Q:](http://www.rcsb.org/pdb/explore.do?structureId=4B9Q) Open conformation of ATP-bound Hsp70 homolog DnaK
+3. [4EZW:](http://www.rcsb.org/pdb/explore.do?structureId=4EZW) Crystal structure of the substrate binding domain of E.coli DnaK in complex with the designer peptide NRLLLTG.
 
 
 ### Tension:
@@ -97,3 +97,9 @@ Figure of the tension in the Hsp70 substrate binding domain:
 
 ### Contacts:
 Figure of the contact evolution for Hsp70, substrate binding domain:
+
+<img src="fig/gsop_contact_16_3_nopep_2khosbd_04-0.png" width="400px">
+<img src="fig/gsop_contact_16_4_nopep_2khosbd_05-0.png" width="400px">
+
+On the left, we have a contact map showing beta-sandwich domain breaking apart first (at 10-13 ms). On the right, we have a contact map showing
+the alpha-helical lid breaking apart before the beta-core (beta-strands 1-5).
