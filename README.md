@@ -76,12 +76,7 @@ The output should be reasonably easy to plot if you are familiar with array mani
 ### Tension:
 Figure of the tension in the Hsp70 substrate binding domain:
 
-<img src="fig/gsop_tension_nopep_16_10_map-0.png" width="380px" height="320px"> <img src="fig/gsop_tension_nopep_16_10_subplot_250_400_500-3.png" width="380px" height="320px">
+<img src="fig/gsop_tension_nopep_16_10_map-0.png" width="380px" height="320px"> <img src="fig/gsop_tension_nopep_16_10_subplot_250_400_500-3.png" width="380px" height="300px">
 
-
-![](fig/gsop_tension_nopep_16_10_subplot_250_400_500-3.png)
-![](fig/gsop_tension_nopep_16_10_lines_150_50-0.png)
-![](fig/gsop_tension_nopep_16_10_lines_200_20-0.png)
-![](fig/gsop_tension_nopep_16_10_lines_250_12-0.png)
-![](fig/gsop_tension_nopep_16_10_lines_400_50-0.png)
-![](fig/gsop_tension_nopep_16_10_lines_900_50-0.png)
+<img src="fig/gsop_tension_nopep_16_10_lines_150_50-0.png" width="380px"> <img src="fig/gsop_tension_nopep_16_10_lines_250_12-0.png" width="380px">
+<img src="fig/gsop_tension_nopep_16_10_lines_400_50-0.png" width="380px"> <img src="fig/gsop_tension_nopep_16_10_lines_900_50-0.png" width="380px">
