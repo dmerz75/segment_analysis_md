@@ -52,11 +52,33 @@ The following softwares will be compiled (target:executable). $(EXEC) is usually
 
 
 ## How to run:
-Assuming you copied the executables to /usr/local/bin, you are now ready to run analysis your SOP trajectories.
+Assuming you copied the executables to /usr/local/bin, you are now ready to run analysis on your SOP trajectories.
 *(if not, then use an export command to expand your $PATH variable to include the segment_analysis-master/bin directory)*
-
-    run_segment_dcd_contactmap_mt mt.ref.pdb dcd/mt_D1_pull.dcd <# of chains> <# of chains to ignore> <start-frame> <stop-frame> <step>
-    run_segment_dcd_contactmap_mt mt.ref.pdb dcd/mt_D1_pull.dcd 157 1 0 25000 10
 
 To run, it's the executable, followed by the pdb and dcd. Then input the # of chains/segments in the molecule, the # of chains and segments in the molecule
 to ignore, and finally a start, stop, and step integers for the frames to be evaluated. Input all of this on 1 line.
+
+    run_segment_dcd_contactmap_mt <PDB> <DCD> <num_chains> <chains_ignore> <start> <stop> <step>
+    run_segment_dcd_contactmap_mt mt.ref.pdb dcd/mt_D1_pull.dcd 157 1 0 25000 10
+
+If you run one of the softwares incorrectly, you'll receive this message:
+
+    Welcome to the segmental/chain analyzer!
+    chain allocation size is: 664
+    chain allocation size is(mt): 664
+    Usage: ./run_segment_dcd_contactmap_mt <Filename-reference-PDB> <Filename-timelater-DCD> <num_chains> <chains_ignore> <start> <stop> <step>
+
+Try again.
+
+## Plotting examples:
+The output should be reasonably easy to plot if you are familiar with array manipulations using numpy or something equivalent.
+
+### Tension:
+Figure of the tension in the Hsp70 substrate binding domain:
+![](fig/gsop_tension_nopep_16_10_map-0.png)
+![](fig/gsop_tension_nopep_16_10_subplot_250_400_500-3.png)
+![](fig/gsop_tension_nopep_16_10_lines_150_50-0.png)
+![](fig/gsop_tension_nopep_16_10_lines_200_20-0.png)
+![](fig/gsop_tension_nopep_16_10_lines_250_12-0.png)
+![](fig/gsop_tension_nopep_16_10_lines_400_50-0.png)
+![](fig/gsop_tension_nopep_16_10_lines_900_50-0.png)
