@@ -52,8 +52,8 @@ The following softwares will be compiled (target:executable). $(EXEC) is usually
 
 
 ## How to run:
-Assuming you copied the executables to /usr/local/bin (if not, then use an export command to expand your $PATH variable
-to include the segment_analysis-master/bin directory), you are now ready to run analysis your SOP trajectories.
+Assuming you copied the executables to /usr/local/bin, you are now ready to run analysis your SOP trajectories.
+*(if not, then use an export command to expand your $PATH variable to include the segment_analysis-master/bin directory)*
 
     run_segment_dcd_contactmap_mt mt.ref.pdb dcd/mt_D1_pull.dcd <# of chains> <# of chains to ignore> <start-frame> <stop-frame> <step>
     run_segment_dcd_contactmap_mt mt.ref.pdb dcd/mt_D1_pull.dcd 157 1 0 25000 10
