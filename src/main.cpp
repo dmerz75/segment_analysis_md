@@ -2236,9 +2236,6 @@ int main(int argc, char *argv[]) {
     // FILE * fp_contacts;
     // fp_contacts_n = fopen("contacts_intra.dat", "w+");
 
-
-
-
 #endif // CONTACTMAP_SM2
 
 #ifdef CONTACTMAP_MT2
