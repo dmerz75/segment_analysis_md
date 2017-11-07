@@ -108,6 +108,7 @@ MTPF_SECS  = -DMTPF_B -DMTPF_M -DMTPF_E
 # MT, PF & SM
 MAPPF       = $(DCD) -DLONONLY_PROTO $(CONMAP_MT) $(CONFILE)
 MAPSM       = $(DCD) $(CONMAP_SM) $(CONTACTBYRESFILE1) # $(CONFILE)
+# MAPNUC      = $(DCD) $(CONMAP_SM) $(CONTACTBYRESFILE1) -DNUCLEOTIDE # $(CONFILE)
 MAPMT       = $(DCD) -DLATLON $(CONMAP_MT) $(CONFILE)
 CENMOV      = $(DCD) -DLATLON $(CENMT)
 ANGLEC_MT   = $(DCD) -DLATLON $(ANG3)
@@ -297,8 +298,14 @@ contactmapP:
 	cd test && time ./$(EXEC)_dcd_contactmap_pf kinesin13_123.ref.pdb kinesin13_123_D1_pull.dcd 15 3 100 13000 900
 contactmapN:
 	$(CXX) $(CPPFILES) $(CF) $(INC) $(LIB) $(MAPSM) -o test/$(EXEC)_dcd_contactmap_1
-	cd test && ./$(EXEC)_dcd_contactmap_1 2khosbd_16-4.ref.pdb 2khosbd_16-4.ref.dcd 1 0 100 800 40
+	# cd test/emol3_adp_201 && ./../$(EXEC)_dcd_contactmap_1 adp4b393.pdb 4b393.dcd 2 1 50 550 7
+	cd test/emol3_adp_201 && ./../$(EXEC)_dcd_contactmap_1 adp4b393.pdb Coord/4b393.dcd 2 1 50 550 7
+
+# cd test && ./$(EXEC)_dcd_contactmap_1 2khosbd_16-4.ref.pdb 2khosbd_16-4.ref.dcd 1 0 100 800 40
 # cd test && time ./$(EXEC)_dcd_contactmap_1 kinesin13_123.ref.pdb kinesin13_123_D1_pull.dcd 15 3 100 800 60
+# contactmapNucleo:
+# 	$(CXX) $(CPPFILES) $(CF) $(INC) $(LIB) $(MAPNUC) -o test/$(EXEC)_dcd_contactmap_nuc
+# 	cd test/emol3_adp_201 && ./../$(EXEC)_dcd_contactmap_nuc adp4b393.pdb Coord/4b393.dcd 2 1 50 550 7
 
 # # combined: angles & contacts.
 # dimermap_release:
